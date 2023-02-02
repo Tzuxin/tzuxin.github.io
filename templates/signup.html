@@ -1,0 +1,45 @@
+{% load static %}
+
+<style>
+    h5{
+        color: rgb(69, 150, 245);
+    }
+</style>
+
+<link rel="stylesheet" href="{% static 'assets/css/signup.css' %}" alt="">
+<div class="wrapper">
+    <div class="logo">
+      <img src="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" alt="">
+    </div></br>
+    <div class="mt-4 name">
+      Sign Up
+    </div></br>
+    <form action="signup" method="POST" class="p-3 mt-3">
+        {% csrf_token %}
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" name="username" id="username" placeholder="Username">
+        </div>
+        <div class="form-field d-flex align-items-center">
+          <span class="far fa-user"></span>
+          <input type="text" name="email" id="email" placeholder="Email">
+      </div>
+        <div class="form-field d-flex align-items-center">
+          <span class="fas fa-key"></span>
+          <input type="password" name="password" id="pwd" placeholder="Password">
+        </div>
+        <div class="form-field d-flex align-items-center">
+          <span class="fas fa-key"></span>
+          <input type="password" name="password2" id="pwd2" placeholder="Re-enter password">
+        </div>
+        <div class="text-center fs-6">
+          {% for message in messages %}
+          <h5>{{message}}</h5>
+          {% endfor %}
+        </div>
+        <button class="btn mt-3" >Register</button>
+    </form>
+    <div class="text-center fs-6">
+      <a href="login2">Login</a>
+    </div>
+</div>
