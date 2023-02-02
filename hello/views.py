@@ -20,3 +20,4 @@ def index(request, *kwargs):
 def greet(request, name):
     return HttpResponse(f'Hello, {name.capitalize()}!')
 
+#hello world
